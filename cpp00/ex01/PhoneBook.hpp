@@ -16,15 +16,19 @@
 # include <string>
 # include "Contact.hpp"
 
+# define UDL "\033[4m"
+# define END "\033[0m"
+
 class PhoneBook {
 public:
 
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	std::string getCommand(void) const;
-	void add(void);
-	void search(void) const;
+	std::string get_command(void) const;
+	void add_contact(void);
+	void replace_contact(void);
+	void search_contact(void) const;
 
 private:
 
