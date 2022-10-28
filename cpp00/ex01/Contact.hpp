@@ -27,7 +27,17 @@ private:
 	std::string _phone_number;
 	std::string _darkest_secret;
 
-    void _write_string(const std::string string) const;
+    //void _write_string(const std::string string) const;
+    std::string getFirstName(void) const;
+	void setFirstName(std::string &str);
+	std::string getLastName(void) const;
+	void setLastName(std::string &str);
+	std::string getNickname(void) const;
+	void setNickname(std::string &str);
+	std::string getPhoneNumber(void) const;
+	void setPhoneNumber(std::string &str);
+	std::string getDarkestSecret(void) const;
+	void setDarkestSecret(std::string &str);
 };
 
 #endif
