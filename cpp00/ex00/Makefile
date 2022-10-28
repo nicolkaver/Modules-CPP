@@ -6,41 +6,40 @@
 #    By: nboratko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 11:59:22 by nboratko          #+#    #+#              #
-#    Updated: 2022/05/19 12:01:17 by nboratko         ###   ########.fr        #
+#    Updated: 2022/10/24 18:39:23 by nboratko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp \
+_RED=	$'\033[1;31m
+_GREEN=	$'\033[1;32m
+_END=	$'\033[0m
+
+SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@echo "\033[0;33mCompiling..."
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "\033[0m"
+%.o: %.cpp ${INCLUDES} 
+	c++ ${CFLAGS} -c $< -o $@
 
-.cpp.o:
-	@echo "\033[0;32mGenerating obj..."
-	$(CC) $(CFLAGS) -c $<
-	@echo "\033[0m"
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(_GREEN)Executable created : megaphone$(_END)"
 
 clean:
-	@echo "\033[0;31mCleaning..."
 	rm -f $(OBJ)
-	@echo "\033[0m"
+	@echo "$(_RED)o. files removed.$(_END)"
 
 fclean: clean
-	@echo "\033[0;31mRemoving executable..."
 	rm -f $(NAME)
-	@echo "\033[0m"
+	@echo "$(_RED)Executable removed.$(_END)"
 
 re: fclean all
 

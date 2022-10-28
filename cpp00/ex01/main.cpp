@@ -19,8 +19,7 @@ int main()
 	PhoneBook phone_book;
 	std::string command;
 
-	do
-	{
+	do {
 		command = phone_book.get_command();
 		if(command.empty())
 			return 0;
@@ -30,7 +29,7 @@ int main()
 			phone_book.search_contact();
 		else if (command.compare("EXIT"))
 		{
-			std::cout << std::endl << "The command \"" << command << "\" does not exist." << std::endl;
+			std::cout << std::endl << "Command \"" << command << "\" does not exist." << std::endl;
 		}
 	} while (command.compare("EXIT"));
 	return 0;

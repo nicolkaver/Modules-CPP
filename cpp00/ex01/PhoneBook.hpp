@@ -16,9 +16,6 @@
 # include <string>
 # include "Contact.hpp"
 
-# define UDL "\033[4m"
-# define END "\033[0m"
-
 class PhoneBook {
 public:
 
@@ -29,10 +26,20 @@ public:
 	void add_contact(void);
 	void replace_contact(void);
 	void search_contact(void) const;
+	std::string getFirstName(void) const;
+	void setFirstName(std::string str);
+	std::string getLastName(void) const;
+	void setLastName(std::string str);
+	std::string getNickname(void) const;
+	void setNickname(std::string str);
+	std::string getPhoneNumber(void) const;
+	void setPhoneNumber(std::string str);
+	std::string getDarkestSecret(void) const;
+	void setDarkestSecret(std::string str);
 
 private:
 
-	Contact _contact[9];
+	Contact _contact[8];
 
 };
 
