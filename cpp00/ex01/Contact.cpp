@@ -111,11 +111,11 @@ void Contact::init_contact(void)
 
 void Contact::display_contact(void) const
 {
-    std::cout << "First name :" << this->_first_name << std::endl;
-    std::cout << "Last name :" << this->_last_name << std::endl;
-    std::cout << "Nickname :" << this->_nickname << std::endl;
-    std::cout << "Phone number :" << this->_phone_number << std::endl;
-    std::cout << "Darkest secret :" << this->_darkest_secret << std::endl;    
+    std::cout << "First name :" << this->getFirstName() << std::endl;
+    std::cout << "Last name :" << this->getLastName() << std::endl;
+    std::cout << "Nickname :" << this->getNickname() << std::endl;
+    std::cout << "Phone number :" << this->getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret :" << this->getDarkestSecret() << std::endl;    
 }
 
 void Contact::list_contact(const int i) const
@@ -124,13 +124,13 @@ void Contact::list_contact(const int i) const
     std::cout << i + 1;
     std::cout << "|";
     std::cout << std::setw(10);
-    std::cout << this->_first_name;
+    std::cout << this->getFirstName();
     std::cout << "|";
     std::cout << std::setw(10);
-    std::cout << this->_last_name;
+    std::cout << this->getLastName();
     std::cout << "|";
     std::cout << std::setw(10);
-    std::cout << this->_nickname;
+    std::cout << this->getNickname();
     std::cout << std::endl;
 }
 

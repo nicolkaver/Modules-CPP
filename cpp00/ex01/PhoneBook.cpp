@@ -27,6 +27,7 @@ std::string PhoneBook::get_command(void) const
 void PhoneBook::add_contact(void)
 {
     int choice;
+	Contact instance;
 
     if (Contact::nb_contact < 8)
 	{

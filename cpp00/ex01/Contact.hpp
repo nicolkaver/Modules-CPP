@@ -20,14 +20,6 @@ public:
     void list_contact(const int i) const;
     void display_contact(void) const;
 
-private:
-	std::string _first_name;
-	std::string _last_name;
-	std::string _nickname;
-	std::string _phone_number;
-	std::string _darkest_secret;
-
-    //void _write_string(const std::string string) const;
     std::string getFirstName(void) const;
 	void setFirstName(std::string &str);
 	std::string getLastName(void) const;
@@ -38,6 +30,13 @@ private:
 	void setPhoneNumber(std::string &str);
 	std::string getDarkestSecret(void) const;
 	void setDarkestSecret(std::string &str);
+
+private:
+	std::string _first_name;
+	std::string _last_name;
+	std::string _nickname;
+	std::string _phone_number;
+	std::string _darkest_secret;
 };
 
 #endif

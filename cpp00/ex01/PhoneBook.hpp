@@ -26,16 +26,9 @@ public:
 	void add_contact(void);
 	void replace_contact(void);
 	void search_contact(void) const;
-	std::string getFirstName(void) const;
-	void setFirstName(std::string str);
-	std::string getLastName(void) const;
-	void setLastName(std::string str);
-	std::string getNickname(void) const;
-	void setNickname(std::string str);
-	std::string getPhoneNumber(void) const;
-	void setPhoneNumber(std::string str);
-	std::string getDarkestSecret(void) const;
-	void setDarkestSecret(std::string str);
+	
+	Contact getContact(int i) const;
+	void setContact(Contact contact, int i);
 
 private:
 
