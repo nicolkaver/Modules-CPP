@@ -6,8 +6,9 @@
 
 PhoneBook::PhoneBook(void)
 {
-    std::cout << "Welcome to your PhoneBook, your contact list is empty." << std::endl;
-	std::cout << "Press \033[4mADD\033[0m to add a contact, \033[4mSEARCH\033[0m to display a contact or \033[4mEXIT\033[0m in order to quit" << std::endl;
+    std::cout << "\033[33;44mWelcome to your PhoneBook !\033[0m" << std::endl;
+	std::cout << "Your contact list is empty." << std::endl;
+	std::cout << "Press \033[33;44m\033[4mADD\033[0m to add a contact, \033[33;44m\033[4mSEARCH\033[0m to display a contact or \033[33;44m\033[4mEXIT\033[0m in order to quit" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void){}

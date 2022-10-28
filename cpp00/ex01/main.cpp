@@ -32,6 +32,6 @@ int main()
 			std::cout << std::endl << "Command \"" << command << "\" does not exist." << std::endl;
 		}
 	} while (command.compare("EXIT"));
-	std::cout << "GOODBYE !" << std::endl;
+	std::cout << "\033[33;44mGOODBYE !" << std::endl;
 	return 0;
 }
