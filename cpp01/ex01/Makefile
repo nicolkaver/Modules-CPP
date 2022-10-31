@@ -10,7 +10,7 @@ _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
+SRC = Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
