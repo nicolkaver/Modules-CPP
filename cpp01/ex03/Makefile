@@ -1,4 +1,4 @@
-NAME = Zombie
+NAME = Weapon
 
 CC = clang++
 
@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(_GREEN)Executable created : Zombie$(_END)"
+	@echo "$(_GREEN)Executable created : Weapon$(_END)"
 
 clean:
 	rm -f $(OBJ)

@@ -4,12 +4,12 @@ Weapon::Weapon(std::string type): _type(type) {}
 
 Weapon::~Weapon(void) {}
 
-const std::string& Weapon::getType(void) const;
+const std::string& Weapon::getType(void) const
 {
     return (this->_type);
 }
 
-void Zombie::setType(const std::string &type)
+void Weapon::setType(const std::string &type)
 {
     this->_type = type;
 }
