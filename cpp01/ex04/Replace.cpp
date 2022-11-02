@@ -6,6 +6,7 @@ Replace::~Replace() {}
 void Replace::replace(std::string s1, std::string s2)
 {
     std::string buf;
+    //istringstrem && ostringstream
     buf = 
 }
 
