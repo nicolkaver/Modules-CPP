@@ -19,10 +19,11 @@ int main(void)
 	std::string *stringPTR = &originalString;
 	std::string &stringREF = originalString;
 
-	std::cout << "Original string address: " << &originalString << std::endl;
-	std::cout << "Address from stringPTR: " << stringPTR << std::endl;
-	std::cout << "Address from stringREF: " << stringREF << std::endl;
-
-	
+	std::cout << "\033[4mOriginal string address:\033[0m " << &originalString << std::endl;
+	std::cout << "\033[4mstringPTR address:\033[0m " << stringPTR << std::endl;
+	std::cout << "\033[4mstringREF address:\033[0m " << &stringREF << std::endl << std::endl;
+	std::cout << "\033[4mOriginal string value:\033[0m " << originalString << std::endl;
+	std::cout << "\033[4mstringPTR value:\033[0m " << *stringPTR << std::endl;
+	std::cout << "\033[4mstringREF value:\033[0m " << stringREF << std::endl;
 	return (0);
 }
