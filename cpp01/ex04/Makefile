@@ -1,16 +1,14 @@
 NAME = Replace
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-INCLUDES = Replace.hpp
 
 _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = main.cpp Replace.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

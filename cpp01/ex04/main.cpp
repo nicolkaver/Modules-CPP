@@ -1,18 +1,63 @@
-#include "Replace.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-int argsErr(void)
+void replace_line(std::string &line, std::string const &str, std::string const &str_new)
 {
-    std::cout << "Error: Wrong number of arguments" << std::endl;
-    std::cout << "Format: ./Replace filename s1 s2" << std::endl;
-    return (1);
+	size_t pos;
+	int cursor = 0;
+	
+	while((pos = line.find(str, cursor)) != str.length()) //std::string::npos) ?
+	{
+		line.erase(pos, str.length());
+		line.insert(pos, str_new);
+		cursor = pos + str_new.length();
+	}
 }
 
-int main(int ac, char **av)
+void process_file(std::ifstream &infile, std::ofstream &outfile, std::string const &str, std::string const &str_new)
 {
-    Replace sed;
+	std::string line;
 
-    if (ac != 4)
-        return (argsErr());
-    
-    return (0);
+	while (getline(infile, line))
+	{
+		replace_line(line, str, str_new); 
+		outfile << line << std::endl;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	std::string str;
+	if (argc != 4)
+	{
+		std::cerr << "Error: Wrong number of arguments" << std::endl;
+		return 1;
+	}
+	for (int i = 0; i < argc; i++)
+	{
+		str.assign(argv[i]);
+		if (str.empty())
+		{
+			std::cerr << "Error: The string is empty" << std::endl;
+			return (1);
+		}
+	}
+	std::ifstream infile(argv[1]);
+	std::ofstream outfile((str.assign(argv[1]) + ".replace").c_str());
+	std::string str_new(argv[3]);
+	str = argv[2];
+	if(!infile.is_open())
+	{
+		std::cerr << "Error: Couldn't open input file" << std::endl;
+		return (1);
+	}
+	if(!outfile.is_open())
+	{
+		std::cerr << "Error: Couldn't open output file" << std::endl;
+		infile.close();
+		return 1;
+	}
+	process_file(infile, outfile, str, str_new);
+	return 0;
 }
