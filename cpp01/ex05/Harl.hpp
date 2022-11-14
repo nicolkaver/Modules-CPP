@@ -15,7 +15,7 @@ class Harl;
 typedef struct  s_complain
 {
 	std::string level;
-	void        (Karen::*func_ptr)(void);
+	void        (Harl::*func_ptr)(void);
 }               t_complain;
 
 
@@ -27,11 +27,11 @@ class Harl {
         void    complain(std::string level);
 
     private:
-        void        _debug(void);
-        void        _info(void);
-        void        _warning(void);
-        void        _error(void);
+        void        debug(void);
+        void        info(void);
+        void        warning(void);
+        void        error(void);
         t_complain	_complain_list[TOTAL_NUM_OF_LEVEL];
-}
+};
 
 #endif
