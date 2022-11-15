@@ -7,7 +7,7 @@ void replace_line(std::string &line, std::string const &str, std::string const &
 	size_t pos;
 	int cursor = 0;
 	
-	while((pos = line.find(str, cursor)) != str.length()) //std::string::npos) ?
+	while((pos = line.find(str, cursor)) != std::string::npos)
 	{
 		line.erase(pos, str.length());
 		line.insert(pos, str_new);
@@ -29,10 +29,11 @@ void process_file(std::ifstream &infile, std::ofstream &outfile, std::string con
 int	main(int argc, char **argv)
 {
 	std::string str;
+
 	if (argc != 4)
 	{
 		std::cerr << "Error: Wrong number of arguments" << std::endl;
-		return 1;
+		return (1);
 	}
 	for (int i = 0; i < argc; i++)
 	{
@@ -45,7 +46,7 @@ int	main(int argc, char **argv)
 	}
 	std::ifstream infile(argv[1]);
 	std::ofstream outfile((str.assign(argv[1]) + ".replace").c_str());
-	std::string str_new(argv[3]);
+	std::string str_new = argv[3];
 	str = argv[2];
 	if(!infile.is_open())
 	{
@@ -56,7 +57,7 @@ int	main(int argc, char **argv)
 	{
 		std::cerr << "Error: Couldn't open output file" << std::endl;
 		infile.close();
-		return 1;
+		return (1);
 	}
 	process_file(infile, outfile, str, str_new);
 	return 0;

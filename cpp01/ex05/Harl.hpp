@@ -8,7 +8,7 @@
 # define INFO 1
 # define WARNING 2
 # define ERROR 3
-# define TOTAL_NUM_OF_LEVEL 4
+# define NUM_LEVEL 4
 
 class Harl;
 
@@ -27,11 +27,11 @@ class Harl {
         void    complain(std::string level);
 
     private:
-        void        debug(void);
-        void        info(void);
-        void        warning(void);
-        void        error(void);
-        t_complain	_complain_list[TOTAL_NUM_OF_LEVEL];
+        void        _debug(void);
+        void        _info(void);
+        void        _warning(void);
+        void        _error(void);
+        t_complain	_complain_list[NUM_LEVEL];
 };
 
 #endif
