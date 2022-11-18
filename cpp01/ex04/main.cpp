@@ -7,7 +7,7 @@ void replace_line(std::string &line, std::string const &str, std::string const &
 	size_t pos;
 	int cursor = 0;
 	
-	while((pos = line.find(str, cursor)) != std::string::npos)
+	while((pos = line.find(str, cursor)) != std::string::npos) //str.length()
 	{
 		line.erase(pos, str.length());
 		line.insert(pos, str_new);
@@ -21,6 +21,7 @@ void process_file(std::ifstream &infile, std::ofstream &outfile, std::string con
 
 	while (getline(infile, line))
 	{
+		std::cout << "LOL   " << line << std::endl;
 		replace_line(line, str, str_new); 
 		outfile << line << std::endl;
 	}
