@@ -2,6 +2,10 @@
 #include <fstream>
 #include <string>
 
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define NC "\033[0m"
+
 void replace_line(std::string &line, std::string const &str, std::string const &str_new)
 {
 	size_t pos;
@@ -21,7 +25,6 @@ void process_file(std::ifstream &infile, std::ofstream &outfile, std::string con
 
 	while (getline(infile, line))
 	{
-		std::cout << "LOL   " << line << std::endl;
 		replace_line(line, str, str_new); 
 		outfile << line << std::endl;
 	}
@@ -33,7 +36,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 4)
 	{
-		std::cerr << "Error: Wrong number of arguments" << std::endl;
+		std::cerr << RED << "Error: Wrong number of arguments" << NC << std::endl;
 		return (1);
 	}
 	for (int i = 0; i < argc; i++)
@@ -41,7 +44,7 @@ int	main(int argc, char **argv)
 		str.assign(argv[i]);
 		if (str.empty())
 		{
-			std::cerr << "Error: The string is empty" << std::endl;
+			std::cerr << RED << "Error: The string is empty" << NC << std::endl;
 			return (1);
 		}
 	}
@@ -51,15 +54,17 @@ int	main(int argc, char **argv)
 	str = argv[2];
 	if(!infile.is_open())
 	{
-		std::cerr << "Error: Couldn't open input file" << std::endl;
+		std::cerr << RED << "Error: Couldn't open input file" << NC << std::endl;
 		return (1);
 	}
 	if(!outfile.is_open())
 	{
-		std::cerr << "Error: Couldn't open output file" << std::endl;
+		std::cerr << RED << "Error: Couldn't open output file" << NC << std::endl;
 		infile.close();
 		return (1);
 	}
 	process_file(infile, outfile, str, str_new);
-	return 0;
+	infile.close();
+	outfile.close();
+	return (0);
 }

@@ -4,6 +4,10 @@
 # include <string>
 # include <iostream>
 
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define NC "\033[0m"
+
 class Zombie {
 public:
     Zombie(std::string name);

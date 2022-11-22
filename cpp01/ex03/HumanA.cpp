@@ -6,6 +6,13 @@ HumanA::~HumanA(void) {}
 
 void HumanA::attack(void) const
 {
+    std::string name = getName();
+    Weapon &weaponx = getWeapon();
+    if (name.empty() || weaponx.getType().empty())
+    {
+        std::cout << RED << "Sorry, you cannot enter an empty string." << NC << std::endl;
+        return ;
+    }
     std::cout << this->getName() << " attacks with their " << getWeapon().getType() << std::endl;
 }
 

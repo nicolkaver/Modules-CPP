@@ -3,5 +3,6 @@
 void randomChump( std::string name )
 {
     Zombie randomChump = Zombie(name);
-    randomChump.announce();
+    if (!name.empty())
+        randomChump.announce();
 }

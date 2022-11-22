@@ -4,6 +4,10 @@
 # include <string>
 # include <iostream>
 
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define NC "\033[0m"
+
 class Zombie {
 public:
     Zombie(void);
@@ -11,7 +15,7 @@ public:
 
         void announce(void) const;
         std::string getName(void) const;
-        void setName(std::string name);
+        bool setName(std::string name);
 
     private:
         std::string _name;

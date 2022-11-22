@@ -2,12 +2,21 @@
 
 int main(void)
 {
-    Zombie *zombies = zombieHorde(3, "Michel");
-    for (int i = 0; i < 3; i++)
+    int n_zombies = 5;
+    std::string name = "LOL";
+    if (!name.empty())
     {
-        zombies[i].announce();
-        std::cout << std::endl;
+        Zombie *zombies = zombieHorde(n_zombies, name);
+        if (!zombies)
+            return (1);
+        for (int i = 0; i < n_zombies; i++)
+        {
+            zombies[i].announce();
+            std::cout << std::endl;
+        }
+        delete [] zombies;
     }
-    delete [] zombies;
+    else
+        std::cout << RED << "Zombies' name cannot stay empty !" << NC << std::endl;
     return (0);
 }
