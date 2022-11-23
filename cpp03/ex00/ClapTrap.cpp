@@ -34,26 +34,34 @@ ClapTrap::~ClapTrap(void) {
 
 void ClapTrap::attack(const std::string & target)
 {
-	if (this->getHitPoints() <= 0 || this->getEnergyPoints() == 0)
+	if (this->getHitPoints() == 0 || this->getEnergyPoints() == 0)
 	{
-		std::cout << RED << this->getName() << "does not have enough strength to attack !" << NC << std::endl;
+		std::cout << RED << "ClapTrap " << this->getName() << "does not have enough strength to attack !" << NC << std::endl;
 		return ;
 	}
 	std::cout << GREEN << "ClapTrap " << this->getName() << " attacks " << target;
-	std::cout << "causing 2 points of damage" << NC <<std::endl;
+	std::cout << " causing " << this->getAttackDamage() << " points of damage" << NC <<std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
-	this->takeDamage(2);
+	//this->takeDamage(2);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	this->setAttackDamage(getAttackDamage() + amount);
-	std::cout << GREEN << "ClapTrap " << this->getName() << " has obtained " << amount << " damage points, ";	
+	if (getHitPoints() <= (int)amount)
+	{
+		setHitPoints(0);
+		std::cout << RED << "ClapTrap " << getName() << " died !" << NC << std::endl;
+	}
+	else
+	{
+		std::cout << GREEN << "ClapTrap " << this->getName() << " has obtained " << amount << " points of damage" << NC << std::endl;
+		setHitPoints(getHitPoints() - amount);
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->getHitPoints() <= 0 || this->getEnergyPoints() == 0)
+	if (this->getHitPoints() == 0 || this->getEnergyPoints() == 0)
 	{
 		std::cout << RED << "ClapTrap " << this->getName() << " does not have enough strength to get repaired !";
 		std::cout << NC << std::endl;
@@ -63,6 +71,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << amount << " brand new hit points." << std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 	setHitPoints(getHitPoints() + amount);
+}
+
+void ClapTrap::print(void)
+{
+	std::cout << GREEN << "*****ClapTrap's DATA*****" << NC << std::endl;
+	std::cout << "HIT POINTS: " << getHitPoints() << std::endl;
+	std::cout << "ENERGY POINTS: " << getEnergyPoints() << std::endl;
+	std::cout << GREEN << "*************************" << NC << std::endl;
 }
 
 // GETTER AND SETTERS

@@ -11,7 +11,5 @@ int main(void)
 	karl.beRepaired(4);
 	std::cout << std::endl;
 	karl.takeDamage(20);
-	std::cout << std::endl;
-	karl.print();
 	return 0;
 }
