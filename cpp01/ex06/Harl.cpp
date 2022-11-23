@@ -1,16 +1,7 @@
 #include "Harl.hpp"
 
-Harl::Harl(void) 
-{
-    _complain_list[DEBUG].level = "debug";
-    _complain_list[DEBUG].func_ptr = &Harl::_debug;
-    _complain_list[INFO].level = "info";
-    _complain_list[INFO].func_ptr = &Harl::_info;
-    _complain_list[WARNING].level = "warning";
-    _complain_list[WARNING].func_ptr = &Harl::_warning;
-    _complain_list[ERROR].level = "error";
-    _complain_list[ERROR].func_ptr = &Harl::_error;
-}
+Harl::Harl(void) {}
+    
 Harl::~Harl(void) {}
 
 void    Harl::_debug(void)
@@ -42,10 +33,26 @@ void    Harl::_error(void)
 
 void    Harl::complain(std::string level)
 {
-    for (int i = 0; i < NUM_LEVEL; i++)
-    {
-        if (_complain_list[i].level == level)
-            return (this->*_complain_list[i].func_ptr)();
-    }
-    std::cout << "[ Probably complaining about nothing significant ]" << std::endl;
+	std::string complaints[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int filterLevel = -1;
+	for (int i = 0; i < NUM_LEVEL; i++)
+	{
+		if (!complaints[i].compare(level))
+			filterLevel = i;
+	}
+
+	switch (filterLevel)
+	{
+		case DEBUG:
+			this->_debug();
+		case INFO:
+			this->_info();
+		case WARNING:
+			this->_warning();
+		case ERROR:
+			this->_error();
+			break;
+		default:
+			std::cout <<  "[ Probably complaining about insignificant problems ]" << std::endl;
+	};
 }

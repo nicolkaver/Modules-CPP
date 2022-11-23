@@ -6,14 +6,17 @@ HumanB::~HumanB(void) {}
 
 void HumanB::attack(void) const
 {
-    std::string name = getName();
-    Weapon weaponx = getWeapon();
-    if (name.empty() || weaponx.getType().empty())
+    if (!this->_weapon)
+    {
+	std::cout << RED << "No weapon, no attack !!!" << NC << std::endl;
+    	return;
+    }
+    if (getName().empty() || getWeapon().getType().empty())
     {
         std::cout << RED << "Sorry, you cannot enter an empty string." << NC << std::endl;
         return ;
     }
-    std::cout << this->getName() << " attacks with their " << getWeapon().getType() << std::endl;
+    std::cout << getName() << " attacks with their " << getWeapon().getType() << std::endl;
 }
 
 Weapon&	HumanB::getWeapon(void) const

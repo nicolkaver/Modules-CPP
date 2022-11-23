@@ -4,38 +4,31 @@
 # include <iostream>
 # include <string>
 
-# define DEBUG 0
-# define INFO 1
-# define WARNING 2
-# define ERROR 3
 # define NUM_LEVEL 4
 
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
 # define NC "\033[0m"
 
-class Harl;
-
-typedef struct  s_complain
-{
-	std::string level;
-	void        (Harl::*func_ptr)(void);
-}               t_complain;
-
+enum filterLevel {
+	DEBUG = 0,
+	INFO = 1,
+	WARNING = 2,
+	ERROR = 3
+};
 
 class Harl {
     public:
         Harl(void);
         ~Harl(void);
 
-        void    complain(std::string level);
+        void    complain(std::string);
 
     private:
         void        _debug(void);
         void        _info(void);
         void        _warning(void);
         void        _error(void);
-        t_complain	_complain_list[NUM_LEVEL];
 };
 
 #endif

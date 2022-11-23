@@ -1,8 +1,8 @@
 NAME = main
 
-CC = clang++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
@@ -15,10 +15,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 %.o: %.cpp
-	${CC} ${CFLAGS} -c $< -o $@
+	${CXX} ${CXXFLAGS} -c $< -o $@
 
 $(NAME): $(OBJ) $(INCLUDES)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(_GREEN)Executable created: main$(_END)"
 
 clean:

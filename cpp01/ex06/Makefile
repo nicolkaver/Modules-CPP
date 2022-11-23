@@ -1,16 +1,16 @@
-NAME = Weapon
+NAME = HarlFilter
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDES = Weapon.hpp HumanA.hpp HumanB.hpp
+INCLUDES = Harl.hpp
 
 _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp 
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(_GREEN)Executable created : Weapon$(_END)"
+	@echo "$(_GREEN)Executable created : HarlFilter$(_END)"
 
 clean:
 	rm -f $(OBJ)

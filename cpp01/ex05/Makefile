@@ -1,8 +1,8 @@
 NAME = Harl
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDES = Harl.hpp
 
@@ -17,10 +17,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 %.o: %.cpp ${INCLUDES} 
-	${CC} ${CFLAGS} -c $< -o $@
+	${CXX} ${CXXFLAGS} -c $< -o $@
 
 $(NAME): $(OBJ) $(INCLUDES)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(_GREEN)Executable created : Harl$(_END)"
 
 clean:
