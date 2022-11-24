@@ -1,4 +1,4 @@
-NAME = ClapTrap 
+NAME = FragTrap 
 
 CXX = c++
 
@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(_GREEN)Executable created : ClapTrap$(_END)"
+	@echo "$(_GREEN)Executable created : FragTrap$(_END)"
 
 clean:
 	rm -f $(OBJ)

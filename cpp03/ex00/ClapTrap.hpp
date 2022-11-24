@@ -28,9 +28,9 @@ public:
 	unsigned int getEnergyPoints(void) const;
 	unsigned int getAttackDamage(void) const;
 
-	void setHitPoints(unsigned int);
-	void setEnergyPoints(unsigned int);
-	void setAttackDamage(unsigned int);
+	void setHitPoints(const unsigned int);
+	void setEnergyPoints(const unsigned int);
+	void setAttackDamage(const unsigned int);
 
 private:
 	std::string _name;

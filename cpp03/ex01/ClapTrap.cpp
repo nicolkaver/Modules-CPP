@@ -44,10 +44,10 @@ void ClapTrap::attack(const std::string & target)
 {
 	if (this->getHitPoints() == 0 || this->getEnergyPoints() == 0)
 	{
-		std::cout << RED << "ClapTrap " << this->getName() << "does not have enough strength to attack !" << NC << std::endl;
+		std::cout << RED << this->getName() << "does not have enough strength to attack !" << NC << std::endl;
 		return ;
 	}
-	std::cout << GREEN << "ClapTrap " << this->getName() << " attacks " << target;
+	std::cout << GREEN << this->getName() << " attacks " << target;
 	std::cout << " causing " << this->getAttackDamage() << " points of damage." << NC <<std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 	this->takeDamage(2);
@@ -58,11 +58,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (getHitPoints() <= amount)
 	{
 		setHitPoints(0);
-		std::cout << RED << "ClapTrap " << getName() << " died because he had no hit points left !" << NC << std::endl;
+		std::cout << RED << this->getName() << " died because he had no hit points left !" << NC << std::endl;
 	}
 	else
 	{
-		std::cout << GREEN << "ClapTrap " << this->getName() << " has obtained " << amount << " points of damage." << NC << std::endl;
+		std::cout << GREEN << this->getName() << " has obtained " << amount << " points of damage." << NC << std::endl;
 		setHitPoints(getHitPoints() - amount);
 	}
 }
@@ -71,11 +71,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->getHitPoints() == 0 || this->getEnergyPoints() == 0)
 	{
-		std::cout << RED << "ClapTrap " << this->getName() << " does not have enough strength to get repaired !";
+		std::cout << RED << this->getName() << " does not have enough strength to get repaired !";
 		std::cout << NC << std::endl;
 		return ;
 	}
-	std::cout << GREEN << "ClapTrap " << this->getName() << " is being repaired and obtains ";
+	std::cout << GREEN << this->getName() << " is being repaired and obtains ";
 	std::cout << amount << " brand new hit points." << std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 	setHitPoints(getHitPoints() + amount);
@@ -112,17 +112,17 @@ unsigned int ClapTrap::getAttackDamage(void) const
 	return (this->attackDamage);
 }
 
-void ClapTrap::setHitPoints(unsigned int amount)
+void ClapTrap::setHitPoints(const unsigned int amount)
 {
 	this->hitPoints = amount;
 }
 
-void ClapTrap::setEnergyPoints(unsigned int amount)
+void ClapTrap::setEnergyPoints(const unsigned int amount)
 {
 	this->energyPoints = amount;
 }
 
-void ClapTrap::setAttackDamage(unsigned int amount)
+void ClapTrap::setAttackDamage(const unsigned int amount)
 {
 	this->attackDamage = amount;
 }
