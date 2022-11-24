@@ -70,6 +70,13 @@ bool Fixed::operator==(Fixed const & rhs) const
 	return (0);
 }
 
+bool Fixed::operator!=(Fixed const & rhs) const
+{
+	if (this->getRawBits() != rhs.getRawBits())
+		return (1);
+	return (0);
+}
+
 /********************************************/
 /***********operators *, -, +, // ***********/
 /********************************************/
@@ -123,7 +130,7 @@ Fixed & Fixed::operator--(void)
 
 Fixed Fixed::operator--(int)
 {
-	Fixed tmp;
+	Fixed tmp = *this;
 	this->_value -= 1;
 	return (tmp);
 }
