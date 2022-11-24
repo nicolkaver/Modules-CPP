@@ -4,6 +4,7 @@ int main(void)
 {
 	ClapTrap karl("Karl");
 
+	karl.print();
 	karl.attack("Robot");
 	std::cout << std::endl;
 	karl.takeDamage(6);

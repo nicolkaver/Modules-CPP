@@ -17,28 +17,26 @@ public:
 	ClapTrap & operator=(ClapTrap const & rhs);
 	~ClapTrap(void);
 
-	void attack(const std::string& target); // -1 energyPoint
+	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount); //-1 energyPoint +amount hitPoints
+	void beRepaired(unsigned int amount);
 	void print(void);
 
 	// GETTERS AND SETTERS
 	std::string getName(void) const;
-	int getHitPoints(void) const;
-	int getEnergyPoints(void) const;
-	int getAttackDamage(void) const;
-	int getDamagePoints(void) const;
+	unsigned int getHitPoints(void) const;
+	unsigned int getEnergyPoints(void) const;
+	unsigned int getAttackDamage(void) const;
 
-	void setHitPoints(int);
-	void setEnergyPoints(int);
-	void setAttackDamage(int);
+	void setHitPoints(unsigned int);
+	void setEnergyPoints(unsigned int);
+	void setAttackDamage(unsigned int);
 
 private:
 	std::string _name;
-	int _hitPoints;
-	int _energyPoints;
-	int _attackDamage;
-	int _damagePoints;
+	unsigned int _hitPoints;
+	unsigned int _energyPoints;
+	unsigned int _attackDamage;
 };
 
 #endif

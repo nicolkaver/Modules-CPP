@@ -40,21 +40,21 @@ void ClapTrap::attack(const std::string & target)
 		return ;
 	}
 	std::cout << GREEN << "ClapTrap " << this->getName() << " attacks " << target;
-	std::cout << " causing " << this->getAttackDamage() << " points of damage" << NC <<std::endl;
+	std::cout << " causing " << this->getAttackDamage() << " points of damage." << NC <<std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 	//this->takeDamage(2);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (getHitPoints() <= (int)amount)
+	if (getHitPoints() <= amount)
 	{
 		setHitPoints(0);
-		std::cout << RED << "ClapTrap " << getName() << " died !" << NC << std::endl;
+		std::cout << RED << "ClapTrap " << getName() << " died because he had no hit points left !" << NC << std::endl;
 	}
 	else
 	{
-		std::cout << GREEN << "ClapTrap " << this->getName() << " has obtained " << amount << " points of damage" << NC << std::endl;
+		std::cout << GREEN << "ClapTrap " << this->getName() << " has obtained " << amount << " points of damage." << NC << std::endl;
 		setHitPoints(getHitPoints() - amount);
 	}
 }
@@ -79,46 +79,42 @@ void ClapTrap::print(void)
 	std::cout << "HIT POINTS: " << getHitPoints() << std::endl;
 	std::cout << "ENERGY POINTS: " << getEnergyPoints() << std::endl;
 	std::cout << GREEN << "*************************" << NC << std::endl;
+	std::cout << std::endl;
 }
 
 // GETTER AND SETTERS
 
 std::string ClapTrap::getName(void) const
 {
-	return (this->_name);
+	return (this->name);
 }
 
-int ClapTrap::getHitPoints(void) const
+unsigned int ClapTrap::getHitPoints(void) const
 {
-	return (this->_hitPoints);
+	return (this->hitPoints);
 }
 
-int ClapTrap::getEnergyPoints(void) const
+unsigned int ClapTrap::getEnergyPoints(void) const
 {
-	return (this->_energyPoints);
+	return (this->energyPoints);
 }
 
-int ClapTrap::getAttackDamage(void) const
+unsigned int ClapTrap::getAttackDamage(void) const
 {
-	return (this->_attackDamage);
+	return (this->attackDamage);
 }
 
-void ClapTrap::setHitPoints(int amount)
+void ClapTrap::setHitPoints(unsigned int amount)
 {
-	this->_hitPoints = amount;
+	this->hitPoints = amount;
 }
 
-void ClapTrap::setEnergyPoints(int amount)
+void ClapTrap::setEnergyPoints(unsigned int amount)
 {
-	this->_energyPoints = amount;
+	this->energyPoints = amount;
 }
 
-void ClapTrap::setAttackDamage(int amount)
+void ClapTrap::setAttackDamage(unsigned int amount)
 {
-	this->_attackDamage = amount;
+	this->attackDamage = amount;
 }
-
-
-//Fixed operator-(Fixed const & rhs) const;
-//Fixed operator+(Fixed const & rhs) const;
-

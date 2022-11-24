@@ -1,16 +1,16 @@
-NAME = ScavTrap 
+NAME = ClapTrap 
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDES = ClapTrap.hpp ScavTrap.hpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(_GREEN)Executable created : ScavTrap$(_END)"
+	@echo "$(_GREEN)Executable created : ClapTrap$(_END)"
 
 clean:
 	rm -f $(OBJ)

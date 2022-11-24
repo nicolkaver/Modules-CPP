@@ -1,13 +1,15 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	ClapTrap robert("Robot no. 1");
-	ScavTrap karl("Robot no. 3");
+	ClapTrap robert("CLAP");
+	ScavTrap karl("SCAV");
+	FragTrap mark("FRAG");
 
 	robert.print();
-	robert.attack("Robot");
+	robert.attack("Robot1");
 	std::cout << std::endl;
 	robert.takeDamage(6);
 	std::cout << std::endl;
@@ -17,8 +19,10 @@ int main(void)
 	std::cout << std::endl;
 	robert.print();
 
+	mark.highFivesGuys();
+
 	karl.print();
-	karl.attack("Robot no. 4");
+	karl.attack("Robot2");
 	std::cout << std::endl;
 	karl.takeDamage(6);
 	std::cout << std::endl;
@@ -28,5 +32,11 @@ int main(void)
 	std::cout << std::endl;
 	karl.guardGate();
 	karl.print();
+
+	mark.print();
+	mark.attack("Robot3");
+	std::cout << std::endl;
+	mark.takeDamage(200);
+	mark.highFivesGuys();
 	return 0;
 }
