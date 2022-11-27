@@ -1,0 +1,26 @@
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
+# include <iostream>
+
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define BLUE "\033[1;34m"
+# define NC "\033[0m"
+
+class Animal {
+public:
+    Animal(void);
+    Animal(std::string);
+    Animal(Animal const &);
+    Animal & operator=(Animal const &);
+    virtual ~Animal(void);
+
+    virtual void makeSound(void) const;
+    std::string getType(void) const;
+
+protected:
+    std::string type;
+};
+
+#endif

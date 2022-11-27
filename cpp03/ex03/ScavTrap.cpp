@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) {
+ScavTrap::ScavTrap(void) : ClapTrap() {
 	std::cout << "Default constructor called fot ScavTrap." << std::endl;
 	this->name = "Jane Doe";
 	this->hitPoints = 100;
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap(void) {
 	return;
 }
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Parametric constructor called for ScavTrap." << std::endl;
 	this->name = name;
 	this->hitPoints = 100;
@@ -18,7 +18,8 @@ ScavTrap::ScavTrap(std::string name) {
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 {
 	std::cout << "Copy constructor called for ScavTrap." << std::endl;
 	*this = src;
@@ -46,13 +47,13 @@ void ScavTrap::attack(const std::string & target)
 		std::cout << RED << this->getName() << " is dead ☠ !" << NC << std::endl;
 		return ;
 	}
-	std::cout << GREEN << "ScavTrap " << this->getName() << " attacks " << target << std::endl;
+	std::cout << GREEN << this->getName() << " attacks " << target << std::endl;
 	std::cout << "This action has caused his target  " << this->getAttackDamage() << " points of damage." << NC <<std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 }
 
 void ScavTrap::guardGate(void)
 {
-	std::cout << BLUE << "ScavTrap " << this->getName() << " is now in gate guarding mode." << NC << std::endl;
+	std::cout << BLUE << this->getName() << " is now in gate guarding mode." << NC << std::endl;
 	std::cout << std::endl;
 }
