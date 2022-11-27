@@ -13,10 +13,10 @@ public:
 
     void learnMateria(AMateria*);
     AMateria* createMateria(std::string const & type);
-    AMateria* getInventory(int idx) const
-
-private:AMateria* 
-
+    AMateria* getInventory(int idx) const;
+    
+private:
+		AMateria	*(_inventory[4]);
 };
 
 #endif

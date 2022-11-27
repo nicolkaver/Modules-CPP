@@ -4,8 +4,8 @@ Cure::Cure(void): type("cure") {}
 
 Cure::Cure(std::string const & type): type(type) {}
 
-Cure::Cure(Cure const & src) : AMateria(src) {
-    this->type = src.type;
+Cure::Cure(Cure const & src): type(src.getType()) { //AMateria(src) {
+    //this->type = src.type;
 }
 
 Cure & Cure::operator=(Cure const & rhs) {

@@ -1,8 +1,9 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-class Character : public ICharacter
-{
+# include "ICharacter.hpp"
+
+class Character : public ICharacter {
 public:
     Character(std::string name);
 	Character(Character const & src);
@@ -16,7 +17,7 @@ public:
     AMateria *getInventory(int idx) const;
 
 private:
-    std::string const _name;
+    std::string _name;
     AMateria* _inventory[4];
 };
 

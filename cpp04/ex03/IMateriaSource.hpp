@@ -1,12 +1,14 @@
 #ifndef I_MATERIA_SOURCE_HPP
 # define I_MATERIA_SOURCE_HPP
 
-# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
 # define BLUE "\033[1;34m"
 # define NC "\033[0m"
+
+class AMateria;
 
 class IMateriaSource
 {

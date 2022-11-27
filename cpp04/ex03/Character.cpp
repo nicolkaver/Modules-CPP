@@ -3,7 +3,7 @@
 Character::Character(std::string name): _name(name) {
     for(int i = 0; i < 4; i++)
 	{
-		getInventory(i) = 0;
+		this->_inventory[i] = 0;
 	}
 }
 
@@ -32,8 +32,8 @@ Character & Character::operator=(Character const & rhs) {
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		if (src._inventory[i])
-			this->_inventory[i] = (src._inventory[i])->clone();
+		if (rhs._inventory[i])
+			this->_inventory[i] = (rhs._inventory[i])->clone();
 	}
     return (*this);
 }
@@ -69,12 +69,12 @@ void Character::unequip(int idx) {
 	else
 	{
 		AMateria *mat = getInventory(idx);
-		std::cout << GREEN << getName << " has unequipped " << mat->getType() << " at index "<< idx << "." << NC << std::endl;
-		getInventory(idx) = 0;
+		std::cout << GREEN << getName() << " has unequipped " << mat->getType() << " at index "<< idx << "." << NC << std::endl;
+		this->_inventory[idx] = 0;
 	}
 }
 void Character::use(int idx, ICharacter& target) {
-    if (idx < 0 || idx >= 4 || !getInventory(i))
+    if (idx < 0 || idx >= 4 || !getInventory(idx))
 	{
 		std::cout << RED << "Nothing found to use at index " << idx << "." << NC << std::endl;
 		return ;
