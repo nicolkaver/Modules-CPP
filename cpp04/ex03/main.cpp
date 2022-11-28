@@ -34,7 +34,7 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << "Then we try to create a materia that does not exist in the nature:" << std::endl;
-	tmp = src->createMateria(NULL);
+	tmp = src->createMateria("holy water");
 	yuna->equip(tmp);
 	std::cout << std::endl;
 	
@@ -45,7 +45,7 @@ int main()
 	yuna->use(1, *zack);
 	std::cout << "Yuna tries to use materia at index that does not exist:" << std::endl;
 	yuna->use(2, *zack);
-
+	
 	delete zack;
 	delete yuna;
 	delete src;
