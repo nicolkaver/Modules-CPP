@@ -10,7 +10,7 @@ _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
+SRC = Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp AMateria.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

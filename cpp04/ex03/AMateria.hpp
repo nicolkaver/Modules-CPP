@@ -18,7 +18,7 @@ public:
     AMateria(void);
     AMateria(std::string const & type);
     AMateria(AMateria const &);
-    //AMateria & operator=(AMateria const &);
+    AMateria & operator=(AMateria const &);
     virtual ~AMateria(void);
     
     std::string const & getType() const; //Returns the materia type
@@ -26,7 +26,7 @@ public:
     virtual void use(ICharacter& target) = 0;
 
 protected:
-    const std::string type;
+    std::string type;
 };
 
 #endif

@@ -8,12 +8,12 @@ AMateria::AMateria(AMateria const & src) {
     this->type = src.type;
 }
 
-/*AMateria & AMateria::operator=(AMateria const & rhs) {
+AMateria & AMateria::operator=(AMateria const & rhs) {
     if (this == &rhs)
         return (*this);
     this->type = rhs.type;
     return (*this);
-}*/
+}
 
 AMateria::~AMateria(void) {}
 

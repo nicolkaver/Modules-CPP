@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap(void): ClapTrap() {
 	std::cout << "Default constructor called fot FragTrap." << std::endl;
-	this->name = "Jane Doe";
+	this->name = "Default";
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
@@ -13,8 +13,8 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
 	std::cout << "Parametric constructor called for FragTrap." << std::endl;
 	this->name = name;
 	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	return;
 }
 

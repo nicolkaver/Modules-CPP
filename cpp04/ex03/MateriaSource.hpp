@@ -3,7 +3,7 @@
 
 # include "IMateriaSource.hpp"
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 public:
     MateriaSource(void);

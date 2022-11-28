@@ -7,7 +7,7 @@ int main(void)
 	karl.print();
 	karl.attack("Robot");
 	std::cout << std::endl;
-	karl.takeDamage(6);
+	karl.takeDamage(2);
 	std::cout << std::endl;
 	karl.beRepaired(4);
 	std::cout << std::endl;

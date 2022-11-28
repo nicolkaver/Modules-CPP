@@ -1,4 +1,5 @@
 #include "MateriaSource.hpp"
+#include "Character.hpp"
 
 MateriaSource::MateriaSource(void) {
     for(int i = 0; i < 4; i++)
@@ -35,17 +36,17 @@ MateriaSource & MateriaSource::operator=(MateriaSource & rhs) {
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
-    int i = 0;
+	int i = 0;
 
 	while ((this->_inventory)[i] != 0 && i < 4)
 		i++;
 	if (i >= 4)
 	{
-		std::cout << "Can't learn more than 4 Materia";
+		std::cout << RED << "Character can only learn 4 materia !" << std::endl;
 		return ;
 	}
 	(this->_inventory)[i] = m;
-	std::cout << "Materia " << m->getType() << " learned\n";
+	std::cout << GREEN << "Materia " << m->getType() << " learned" << NC << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
@@ -55,10 +56,10 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 		i++;
 	if (i >= 4 || !(this->_inventory)[i])
 	{
-		std::cout << type << " materia does not exit\n";
+		std::cout << RED << type << " materia does not exit" << NC << std::endl;
 		return (NULL);
 	}
-	std::cout << "Materia " << type << " created\n";
+	std::cout << GREEN << "Materia " << type << " created" << NC << std::endl;
 	return (((this->_inventory)[i])->clone());
 }
 

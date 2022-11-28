@@ -40,6 +40,8 @@ int main(void)
 	mark.highFivesGuys();
 
 	ed.print();
+	ed.whoAmI();
+	std::cout << std::endl;
 	ed.attack("Robot4");
 	std::cout << std::endl;
 	ed.takeDamage(10);

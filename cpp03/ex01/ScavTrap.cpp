@@ -29,6 +29,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
 	if (this == &rhs)
 		return (*this);
+	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->energyPoints = rhs.energyPoints;
 	this->attackDamage = rhs.attackDamage;

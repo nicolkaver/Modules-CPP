@@ -8,8 +8,8 @@ Character::Character(std::string name): _name(name) {
 }
 
 Character::Character(Character const & src) : ICharacter(src) {
-    this->_name = src._name + "_copy";
-    for(int i = 0; i < 4; i++)
+	this->_name = src._name + "_copy";
+	for(int i = 0; i < 4; i++)
 	{
 		if ((src._inventory)[i])
 			(this->_inventory)[i] = (src._inventory[i])->clone();
@@ -58,14 +58,14 @@ void Character::equip(AMateria* m) {
         return;
     }
     (this->_inventory)[i] = m;
-	std::cout << GREEN << getName() << " has equipped materia " << m->getType() << " in slot " << i << NC << std::endl;
+	std::cout << GREEN << getName() << " has equipped materia " << m->getType() << " at index " << i << NC << std::endl;
 }
 
 void Character::unequip(int idx) {
     if (idx < 0 || idx >= 4)
 		std::cout << RED << "There is nothing to unequip at index " << idx << "." << NC << std::endl;
 	else if (!getInventory(idx))
-		std::cout << "Index " << idx << " is empty so " << getName() << " cannot unequip it" << NC << std::endl;
+		std::cout << RED << "Index " << idx << " is empty so " << getName() << " cannot unequip it" << NC << std::endl;
 	else
 	{
 		AMateria *mat = getInventory(idx);
@@ -74,15 +74,15 @@ void Character::unequip(int idx) {
 	}
 }
 void Character::use(int idx, ICharacter& target) {
-    if (idx < 0 || idx >= 4 || !getInventory(idx))
+	if (idx < 0 || idx >= 4 || !getInventory(idx))
 	{
 		std::cout << RED << "Nothing found to use at index " << idx << "." << NC << std::endl;
 		return ;
 	}
-	std::cout << getName() << ":" << std::endl;
+	//std::cout << GREEN << getName() << ":" << NC << std::endl;
 	(getInventory(idx))->use(target);
 }
 
 AMateria* Character::getInventory(int idx) const {
-    return (this->_inventory)[idx];
+    return ((this->_inventory)[idx]);
 }
