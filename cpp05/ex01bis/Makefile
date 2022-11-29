@@ -32,4 +32,8 @@ fclean: clean
 
 re: fclean all
 
+<<<<<<< HEAD
 .PHONY: all re clean fclean%  
+=======
+.PHONY: all re clean fclean%  
+>>>>>>> eb844c78e7b191a547131f491443804cd10f63eb

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -15,15 +16,23 @@
 # define CBLUE(x) BLUE x NC
 
 class Bureaucrat;
+=======
+
+>>>>>>> eb844c78e7b191a547131f491443804cd10f63eb
 
 class Form {
 public:
     Form();
+<<<<<<< HEAD
     Form(std::string const, bool, int const, int const);
+=======
+    Form(std::string const, int);
+>>>>>>> eb844c78e7b191a547131f491443804cd10f63eb
     Form(Form const &);
     ~Form();
     Form & operator=(Form const &);
 
+<<<<<<< HEAD
     void beSigned(Bureaucrat &);
 
     //ACCESSORS
@@ -53,3 +62,8 @@ private:
 std::ostream & operator<<( std::ostream & o, Form const & rhs);
 
 #endif
+=======
+private:
+
+};
+>>>>>>> eb844c78e7b191a547131f491443804cd10f63eb
