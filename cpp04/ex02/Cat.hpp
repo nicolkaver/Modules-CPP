@@ -4,6 +4,7 @@
 # include <iostream>
 
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Cat : public AAnimal {
 public:
@@ -14,6 +15,10 @@ public:
     ~Cat(void);
 
     void makeSound() const;
+    Brain* getBrain() const;
+
+private:
+    Brain* _brain;
 };
 
 #endif

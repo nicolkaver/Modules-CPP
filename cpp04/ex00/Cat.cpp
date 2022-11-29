@@ -10,9 +10,10 @@ Cat::Cat(std::string type) {
     this->type = type;
 }
 
-Cat::Cat(Cat const & src): Animal(src) {
+Cat::Cat(Cat const & src): Animal(src) 
+{
     std::cout << "Copy constructor called for Cat." << std::endl;
-    *this = src;
+    this->type = src.type;
 }
 
 Cat & Cat::operator=(Cat const & rhs) {

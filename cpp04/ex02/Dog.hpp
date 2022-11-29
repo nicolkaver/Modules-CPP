@@ -2,6 +2,7 @@
 # define DOG_HPP
 
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Dog : public AAnimal {
 public:
@@ -12,6 +13,10 @@ public:
     ~Dog(void);
 
     void makeSound() const;
+    Brain* getBrain() const;
+
+private:
+    Brain* _brain;
 };
 
 #endif

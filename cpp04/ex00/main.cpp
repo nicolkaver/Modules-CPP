@@ -11,7 +11,7 @@ const Animal* dog = new Dog();
 const Animal* cat = new Cat();
 
 std::cout << GREEN << "DOG TYPE: " << dog->getType() << std::endl;
-std::cout << "CAT TYPE: " <<cat->getType() << std::endl;
+std::cout << "CAT TYPE: " << cat->getType() << std::endl;
 
 dog->makeSound();
 cat->makeSound();

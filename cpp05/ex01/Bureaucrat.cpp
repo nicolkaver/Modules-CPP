@@ -40,6 +40,11 @@ void Bureaucrat::decrementGrade(void) {
     ++this->_grade;
 }
 
+void Bureaucrat::signForm(Form & form) {
+	if (form.getIsSigned() == true)
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+}
+
 std::string const & Bureaucrat::getName(void) const {
     return (this->_name);
 }

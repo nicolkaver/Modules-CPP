@@ -35,6 +35,7 @@ int main()
 
 	std::cout << "Then we try to create a materia that does not exist in the nature:" << std::endl;
 	tmp = src->createMateria("holy water");
+	std::cout << "Therefore, Yuna cannot equip this materia:" << std::endl;
 	yuna->equip(tmp);
 	std::cout << std::endl;
 	

@@ -17,6 +17,8 @@ int main(void)
     std::cout << GREEN << "Tests' end." << NC << std::endl;
     std::cout << std::endl;
 
+    //***********************************************
+
     std::cout << GREEN << "CREATION:" << NC << std::endl;
     const Animal *animals[NUM_ANIM];
     for (int i = 0; i < NUM_ANIM / 2; i++)
@@ -29,8 +31,10 @@ int main(void)
     for (int i = 0; i < NUM_ANIM; i++)
         delete animals[i];
 
+    //***********************************************
     std::cout << std::endl;
     std::cout << GREEN << "Tests for BRAIN:" << NC << std::endl;
+
     Cat cat1;
     Cat cat2;
 

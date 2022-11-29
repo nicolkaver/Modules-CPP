@@ -13,7 +13,6 @@ Animal::Animal(std::string type) {
 Animal::Animal(Animal const & src) {
     std::cout << "Copy constructor called for Animal." << std::endl;
     *this = src;
-    //return (*this);
     return;
 }
 

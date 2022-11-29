@@ -14,7 +14,8 @@ Cat::Cat(std::string type) {
 
 Cat::Cat(Cat const & src): Animal(src) {
     std::cout << "Copy constructor called for Cat." << std::endl;
-    *this = src;
+    this->type = src.type;
+    *this->_brain = *src._brain;
 }
 
 Cat & Cat::operator=(Cat const & rhs) {

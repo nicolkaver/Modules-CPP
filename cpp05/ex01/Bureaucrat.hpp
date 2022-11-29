@@ -3,6 +3,7 @@
 
 # include <stdexcept>
 # include <iostream>
+# include "Form.hpp"
 
 # define MAX_GRADE 1
 # define MIN_GRADE 150
@@ -11,6 +12,7 @@
 # define GREEN "\033[1;32m"
 # define BLUE "\033[1;34m"
 # define NC "\033[0m"
+# define CBLUE(x) BLUE x NC
 
 class Bureaucrat {
 public:
@@ -32,6 +34,7 @@ public:
 
     void incrementGrade();
     void decrementGrade();
+    void signForm();
 
     std::string const & getName(void) const;
     int getGrade(void) const;

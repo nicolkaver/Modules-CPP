@@ -47,7 +47,7 @@ void Character::equip(AMateria* m) {
 
     if (!m)
     {
-        std::cout << RED << "No materia to use !" << NC << std::endl;
+        std::cout << RED << "No materia to equip !" << NC << std::endl;
         return;
     }
     while (getInventory(i) != 0 && i < 4)

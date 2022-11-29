@@ -4,13 +4,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDES = AAnimal.hpp Cat.hpp Dog.hpp
+INCLUDES = AAnimal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 _RED=	$'\033[1;31m
 _GREEN=	$'\033[1;32m
 _END=	$'\033[0m
 
-SRC = AAnimal.cpp Cat.cpp Dog.cpp main.cpp
+SRC = AAnimal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
