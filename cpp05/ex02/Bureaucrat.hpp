@@ -3,7 +3,7 @@
 
 # include <stdexcept>
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define MAX_GRADE 1
 # define MIN_GRADE 150
@@ -14,7 +14,7 @@
 # define NC "\033[0m"
 # define CBLUE(x) BLUE x NC
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 public:
@@ -40,7 +40,7 @@ public:
 
     std::string const & getName(void) const;
     int getGrade(void) const;
-    void signForm(Form &);
+    void signAForm(AForm &);
 
 private:
     std::string const _name;

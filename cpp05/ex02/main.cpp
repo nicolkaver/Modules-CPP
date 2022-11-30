@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main(void)
 {
@@ -18,13 +18,13 @@ int main(void)
 	{
 		Bureaucrat bureaucrat("Boris", 42);
 		std::cout << bureaucrat << std::endl;;
-		Form form1("form1", 50, 42);
-		Form form2("form2", 40, 42);
-		Form form3("form3", 60, 40); // For the moment we are not testing gradeToExecute
-		std::cout << form1 << form2 << form3 << std::endl;
-		bureaucrat.signForm(form1);
-		bureaucrat.signForm(form2);
-		bureaucrat.signForm(form3);
+		AForm AForm1("AForm1", 50, 42);
+		AForm AForm2("AForm2", 40, 42);
+		AForm AForm3("AForm3", 60, 40); // For the moment we are not testing gradeToExecute
+		std::cout << AForm1 << AForm2 << AForm3 << std::endl;
+		bureaucrat.signAForm(AForm1);
+		bureaucrat.signAForm(AForm2);
+		bureaucrat.signAForm(AForm3);
 		std::cout << std::endl;
 	}
 	catch (std::exception & e)

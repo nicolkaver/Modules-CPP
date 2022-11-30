@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(void): _name("Default"), _grade(MIN_GRADE) {
 	std::cout << "Default constuctor called for " << this->getName() << " with grade " << this->getGrade() << std::endl;
@@ -19,28 +20,40 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src): _name(src._name) {
 }
 
 Bureaucrat::~Bureaucrat(void) {
-    std::cout << "Destructor called for Bureaucrat " << this->getName() << " with a grade " << this->getGrade() << std::endl;
+	std::cout << "Destructor called for " << this->getName() << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 	if (this == &rhs)
 		return (*this);
-    const_cast<std::string&>(this->_name) = rhs._name;
+	const_cast<std::string&>(_name) = rhs._name;
 	this->_grade = rhs._grade;
 	std::cout << "Copy assignment operator called for " << this->getName() << " with grade " << this->getGrade() << std::endl;
 	return (*this);
 }
 
 void Bureaucrat::incrementGrade(void) {
-    	--this->_grade;
-        if (this->getGrade() < MAX_GRADE)
-		    throw GradeTooHighException();
+    --this->_grade;
+    if (this->getGrade() < MAX_GRADE)
+	    throw GradeTooHighException();
 }
 
 void Bureaucrat::decrementGrade(void) {
     ++this->_grade;
     if (this->getGrade() > MIN_GRADE)
 	    throw GradeTooLowException();
+}
+
+void Bureaucrat::signForm(AForm & form) {
+	try
+	{
+		form.beSigned(*this);
+		std::cout << GREEN << this->getName() << " signed " << form.getName() << NC << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << RED << this->_name << " couldn’t sign " << form.getName() << ". " << e.what() << NC << std::endl;
+	}	
 }
 
 std::string const & Bureaucrat::getName(void) const {
