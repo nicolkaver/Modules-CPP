@@ -32,13 +32,15 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 }
 
 void Bureaucrat::incrementGrade(void) {
-    	--this->_grade;
-        if (this->getGrade() < MAX_GRADE)
-		    throw GradeTooHighException();
+    --this->_grade;
+	std::cout << CBLUE("Grade has been incremented.") << std::endl;
+    if (this->getGrade() < MAX_GRADE)
+	    throw GradeTooHighException();
 }
 
 void Bureaucrat::decrementGrade(void) {
     ++this->_grade;
+	std::cout << CBLUE("Grade has been incremented.") << std::endl;
     if (this->getGrade() > MIN_GRADE)
 	    throw GradeTooLowException();
 }

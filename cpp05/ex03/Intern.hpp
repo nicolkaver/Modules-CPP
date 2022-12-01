@@ -31,11 +31,8 @@ public:
 	};
 
 	AForm* makeForm(const std::string formName, const std::string formTarget) const;	
-
-private:
-    AForm* _makeShrubbery(const std::string formName, const std::string formTarget) const;
-    AForm* _makeRobotomy(const std::string formName, const std::string formTarget) const;
-    AForm* _makePresidential(const std::string formName, const std::string formTarget) const;
 };
+
+std::ostream & operator<<( std::ostream & o, Intern const & rhs);
 
 #endif

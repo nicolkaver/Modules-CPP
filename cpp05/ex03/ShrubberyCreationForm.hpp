@@ -13,7 +13,8 @@ public:
     ShrubberyCreationForm & operator=(ShrubberyCreationForm const &);
 
     virtual void execute(const Bureaucrat& executor) const;
-
 };
+
+std::ostream & operator<<( std::ostream & o, ShrubberyCreationForm const & rhs);
 
 #endif

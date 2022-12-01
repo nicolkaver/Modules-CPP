@@ -12,6 +12,7 @@
 # define GREEN "\033[1;32m"
 # define BLUE "\033[1;34m"
 # define NC "\033[0m"
+# define BOLD "\033[1;3m"
 # define CBLUE(x) BLUE x NC
 
 class Form;

@@ -16,4 +16,6 @@ public:
 
 };
 
+std::ostream & operator<<( std::ostream & o, ShrubberyCreationForm const & rhs);
+
 #endif

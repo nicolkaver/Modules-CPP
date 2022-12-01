@@ -58,7 +58,7 @@ public:
 protected:
 	AForm(const int gradeToSign, const int gradeToExecute);
 	void checkToExecute(const Bureaucrat & executor) const;
-	const std::string target;
+	std::string target;
 
 private:
     std::string const _name;

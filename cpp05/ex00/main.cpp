@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	std::cout << "The first bureaucrat Alison with grade 42:" << std::endl;
+	std::cout << BOLD << "The first bureaucrat Alison with grade 42:" << NC << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Alison", 42);
@@ -13,7 +13,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << "The second bureaucrat Michael with grade 151:" << std::endl;
+	std::cout << BOLD << "The second bureaucrat Michael with grade 151:" << NC << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Michael", 151);
@@ -24,7 +24,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << "The third bureaucrat Alice with grade 0:" << std::endl;
+	std::cout << BOLD << "The third bureaucrat Alice with grade 0:" << NC << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Alice", 0);
@@ -35,7 +35,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << "The fourth bureaucrat Robin had his grade 1 incremented:" << std::endl;
+	std::cout << BOLD << "The fourth bureaucrat Robin had his grade 1 incremented:" << NC << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Robin", 1);
@@ -47,7 +47,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << "The fifth bureaucrat Maria had her grade 150 decremented:" << std::endl;
+	std::cout << BOLD << "The fifth bureaucrat Maria had her grade 150 decremented:" << NC << std::endl;
 	try {
 		Bureaucrat bureaucrat("Maria", 150);
 		bureaucrat.decrementGrade();

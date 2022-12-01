@@ -40,3 +40,8 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	else
 		std::cout << RED << "Robotomy failed." << NC << std::endl;
 }
+
+std::ostream & operator<<( std::ostream & o, RobotomyRequestForm const & rhs) {
+	o << "Robotomy request form " << rhs.getName() << std::endl;
+	return (o);
+}

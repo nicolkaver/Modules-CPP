@@ -25,25 +25,10 @@ const char* Intern::FormDoesNotExistException::what() const throw()
 	return ("Error: form does not exist!");
 }
 
-AForm* Intern::_makeShrubbery(const std::string formName, const std::string formTarget) const {
-    AForm* shrubbery = new ShrubberyCreationForm(formName, formTarget);
-    std::cout << GREEN << "Intern creates " << formName << " for " << formTarget << NC << std::endl;
-    return (shrubbery);
-}
-
-AForm* Intern::_makeRobotomy(const std::string formName, const std::string formTarget) const {
-    AForm* robotomy = new RobotomyRequestForm(formName, formTarget);
-    return (robotomy);
-}
-
-AForm* Intern::_makePresidential(const std::string formName, const std::string formTarget) const {
-    AForm* presidential = new PresidentialPardonForm(formName, formTarget);
-    return (presidential);
-}
-
 AForm* Intern::makeForm(const std::string formName, const std::string formTarget) const {
     std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
     int choice = -1;
+    AForm* ret = NULL;
     for (int i = 0; i < NUM_FORMS; i++)
     {
         if(!formName.compare(forms[i]))
@@ -51,16 +36,25 @@ AForm* Intern::makeForm(const std::string formName, const std::string formTarget
     }
     switch (choice) {
         case SHRUB:
+            ret = new ShrubberyCreationForm(formName, formTarget);
             std::cout << GREEN << "Intern creates " << forms[choice] << "." << NC << std::endl;
-            return(_makeShrubbery(formName, formTarget));
+            return (ret);
         case ROBO:
+            ret = new RobotomyRequestForm(formName, formTarget);
             std::cout << GREEN << "Intern creates " << forms[choice] << "." << NC << std::endl;
-            return(_makeRobotomy(formName, formTarget));
+            return (ret);
         case PRES:
+            ret = new PresidentialPardonForm(formName, formTarget);
             std::cout << GREEN << "Intern creates " << forms[choice] << "." << NC << std::endl;
-            return(_makePresidential(formName, formTarget));
+            return (ret);
         default:
             throw FormDoesNotExistException();
     };
-    return (NULL);
+    return (ret);
+}
+
+std::ostream & operator<<( std::ostream & o, Intern const & rhs) {
+    (void)rhs;
+    o << "This intern is kind of dummy because he has no attributes." << std::endl;
+	return (o);
 }

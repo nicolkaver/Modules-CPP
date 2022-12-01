@@ -17,4 +17,6 @@ public:
 	virtual void execute(const Bureaucrat& executor) const;
 };
 
+std::ostream & operator<<( std::ostream & o, PresidentialPardonForm const & rhs);
+
 #endif
