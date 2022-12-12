@@ -11,7 +11,10 @@ int main(void) {
     std::cout << std::endl;
 
     uintptr_t toSerialize = serialize(&data);
-    Data *toDeserialize = deserialize(toSerialize);
+    Data* toDeserialize = deserialize(toSerialize);
+    // void* test = reinterpret_cast<void *>(&data);
+    // std::cout << test << std::endl;
+    // std::cout << toSerialize << std::endl;
 
     std::cout << "After serialization: " << std::endl;
     std::cout << "String: " << toDeserialize->str << std::endl;

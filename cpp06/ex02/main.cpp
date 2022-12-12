@@ -36,17 +36,15 @@ void	identify(Base& p)
 	try {
 		a = dynamic_cast<A&>(p);
 		std::cout << "Reference to A." << std::endl;
-	} catch (std::exception & e) {
+	} catch (std::bad_cast & bc) {}
 	try {
 		b = dynamic_cast<B&>(p);
 		std::cout << "Reference to B." << std::endl;
-	} catch (std::exception & e) {
+	} catch (std::bad_cast & bc) {}
 	try {
 		c = dynamic_cast<C&>(p);
 		std::cout << "Reference to C." << std::endl;
-	} catch (std::exception & e){
-
-	}}}
+	} catch (std::bad_cast & bc){}
 }
 
 int main(void)

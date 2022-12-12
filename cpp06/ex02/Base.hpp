@@ -4,13 +4,12 @@
 # include <iostream>
 # include <string>
 # include <stdlib.h>
+# include <typeinfo>
 
 class Base
 {
-	public:
-		virtual ~Base();
-
-	protected:
+public:
+	virtual ~Base();
 };
 
 class A : public Base {
