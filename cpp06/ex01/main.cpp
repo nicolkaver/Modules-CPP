@@ -1,6 +1,11 @@
 #include "data.hpp"
 
-int main(void) {
+int main(int ac, char **av) {
+    (void)av;
+    if (ac > 1) {
+        std::cout << "Please don't enter additional arguments." << std::endl;
+        return (1);
+    }
     Data data;
     data.str = "Hello !";
     data.num = 42;
@@ -12,9 +17,6 @@ int main(void) {
 
     uintptr_t toSerialize = serialize(&data);
     Data* toDeserialize = deserialize(toSerialize);
-    // void* test = reinterpret_cast<void *>(&data);
-    // std::cout << test << std::endl;
-    // std::cout << toSerialize << std::endl;
 
     std::cout << "After serialization: " << std::endl;
     std::cout << "String: " << toDeserialize->str << std::endl;

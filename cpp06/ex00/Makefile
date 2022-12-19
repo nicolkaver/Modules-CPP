@@ -1,4 +1,4 @@
-NAME = Conversion
+NAME = convert
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -20,7 +20,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(_GREEN)Executable created : Conversion$(_END)"
+	@echo "$(_GREEN)Executable created : convert$(_END)"
 
 clean:
 	rm -f $(OBJ)

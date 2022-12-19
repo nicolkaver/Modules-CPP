@@ -4,7 +4,7 @@
 # include <iostream>
 # include <string>
 # include <stdlib.h>
-# include <typeinfo>
+//# include <typeinfo>
 
 class Base
 {

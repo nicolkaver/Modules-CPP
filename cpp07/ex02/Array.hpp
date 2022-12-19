@@ -2,6 +2,14 @@
 # define ARRAY_HPP
 
 #include <iostream>
+#include <stdlib.h>
+
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define BLUE "\033[1;34m"
+# define NC "\033[0m"
+# define CBLUE(x) BLUE x NC
+# define CRED(x) RED x NC
 
 template<typename T>
 class Array
@@ -14,12 +22,12 @@ public:
 	Array(unsigned int n);
 	Array(const Array<T> &src);
 	~Array();
-	Array<T> &operator=(const Array<T> &src);
+	Array<T> & operator=(const Array<T> &src);
 
-	T &operator[](int index);
+	T & operator[](int index);
 	T const & operator[](int index) const;
 
-	int size() const;
+	int getArrSize() const;
 };
 
 template<typename T>
@@ -35,14 +43,18 @@ Array<T>::Array(const Array<T> &src)
 }
 
 template<typename T>
-Array<T> &Array<T>::operator=(const Array<T> &src)
+Array<T> & Array<T>::operator=(const Array<T> &src)
 {
 	if(this != &src)
 	{
-		delete[] arr;
+		// if (arr)
+		// 	delete[] arr;
 		arrSize = src.arrSize;
 		arr = new T[arrSize];
-		memcmp(src.arr, arr, arrSize);
+		for (int i = 0; i < arrSize; i++) {
+			this->arr[i] = src.arr[i];
+		}
+		//memcmp(src.arr, arr, arrSize);
 	}
 	return (*this);
 }
@@ -54,7 +66,7 @@ Array<T>::~Array()
 }
 
 template<typename T>
-int Array<T>::size() const
+int Array<T>::getArrSize() const
 {
 	return (arrSize);
 }
@@ -76,9 +88,9 @@ T const &Array<T>::operator[](int index) const
 }
 
 template<typename T>
-std::ostream &operator<<(std::ostream &out, const Array<T> &arr)
+std::ostream & operator<<(std::ostream & out, Array<T> const & arr)
 {
-	for(int i = 0; i < arr.size(); ++i)
+	for(int i = 0; i < arr.getArrSize(); ++i)
 		out << arr[i] << " ";
 	return (out);
 }

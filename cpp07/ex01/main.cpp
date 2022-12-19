@@ -1,7 +1,5 @@
 #include "iter.hpp"
 
-
-
 int main(void) {
     int array[] = {0, 1, 2, 3};
     std::string string[] = {"This", "is", "a", "template"};

@@ -19,6 +19,10 @@ Base* generate(void)
 }
 
 void identify(Base *p) {
+    if (p == NULL) {
+        std::cout << "The pointer is NULL." << std::endl;
+        return ;
+    }
     if (dynamic_cast<A*>(p))
         std::cout << "Pointer to A." << std::endl;
     if (dynamic_cast<B*>(p))
@@ -35,16 +39,16 @@ void	identify(Base& p)
 
 	try {
 		a = dynamic_cast<A&>(p);
-		std::cout << "Reference to A." << std::endl;
-	} catch (std::bad_cast & bc) {}
+        std::cout << "Reference to A." << std::endl;
+	} catch (std::exception & e) {}
 	try {
 		b = dynamic_cast<B&>(p);
 		std::cout << "Reference to B." << std::endl;
-	} catch (std::bad_cast & bc) {}
+	} catch (std::exception & e) {}
 	try {
 		c = dynamic_cast<C&>(p);
 		std::cout << "Reference to C." << std::endl;
-	} catch (std::bad_cast & bc){}
+	} catch (std::exception & e){}
 }
 
 int main(void)
@@ -55,4 +59,5 @@ int main(void)
     p = generate();
     identify(p);
     identify(*p);
+    delete p;
 }

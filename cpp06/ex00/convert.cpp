@@ -33,16 +33,16 @@ void convertFromChar(std::string & str)
 {
     char c(str[0]);
     std::cout << "char: ";
-    std::isprint(c) ? std::cout << c << std::endl : std::cout << "Not displayable" << std::endl;
+    std::isprint(c) ? std::cout << "'" << c << "'" << std::endl : std::cout << "Non displayable" << std::endl;
 
     int i = static_cast<int>(c);
-    std::cout << "int :" << i << std::endl;
+    std::cout << "int: " << i << std::endl;
 
     float f = static_cast<float>(c);
-    std::cout << "float :" << f << ".0f" << std::endl;
+    std::cout << "float: " << f << ".0f" << std::endl;
 
     double d = static_cast<double>(c);
-    std::cout << "double :" << d << ".0" << std::endl;
+    std::cout << "double: " << d << ".0" << std::endl;
 }
 
 void convertFromInt(std::string & str)
@@ -54,9 +54,9 @@ void convertFromInt(std::string & str)
     if (i < std::numeric_limits<char>::min() || i > std::numeric_limits<char>::max())
         std::cout << "impossible" << std::endl;
     else if (!std::isprint(c))
-        std::cout << "not displayable" << std::endl;
+        std::cout << "Non displayable" << std::endl;
     else
-        std::cout << c << std::endl;
+        std::cout << "'" << c << "'" << std::endl;
 
     std::cout << "int: " << i << std::endl;
     
@@ -77,9 +77,9 @@ void convertFromDouble(std::string & str)
     if (d < std::numeric_limits<char>::min() || d > std::numeric_limits<char>::max())
         std::cout << "impossible" << std::endl;
     else if (!std::isprint(c))
-        std::cout << "Not displayable" << std::endl;
+        std::cout << "Non displayable" << std::endl;
     else
-        std::cout << c << std::endl;
+        std::cout << "'" << c << "'" << std::endl;
 
     int i = static_cast<int>(d);
     std::cout << "int: ";
