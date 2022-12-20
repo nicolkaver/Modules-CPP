@@ -29,7 +29,7 @@ int main(int ac, char **av)
             convertFromDouble(arg);
             break;
         default:
-            std::cout << RED << "Error : the entered type cannot be converted !" << std::endl;
+            std::cout << RED << "Error : the entered type cannot be converted !" << NC << std::endl;
     };
     return (0);
 }

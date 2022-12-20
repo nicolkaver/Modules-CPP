@@ -2,7 +2,6 @@
 # define ARRAY_HPP
 
 #include <iostream>
-#include <stdlib.h>
 
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
@@ -54,7 +53,6 @@ Array<T> & Array<T>::operator=(const Array<T> &src)
 		for (int i = 0; i < arrSize; i++) {
 			this->arr[i] = src.arr[i];
 		}
-		//memcmp(src.arr, arr, arrSize);
 	}
 	return (*this);
 }
