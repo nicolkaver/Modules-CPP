@@ -84,3 +84,14 @@ std::ostream& operator<<(std::ostream& o, Span const & rhs)
 //     o << std::endl;
 // 	return (o);
 // }
+
+//THIS WOULD WORK IN C++11
+// std::ostream& operator<<(std::ostream& o, Span const & rhs)
+// {
+//     std::vector<int> tmp = rhs.getVector();
+// 	for (int num : tmp) {
+//         std::cout << num << std::endl;
+//     }
+//     o << std::endl;
+// 	return (o);
+// }
