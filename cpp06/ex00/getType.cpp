@@ -25,13 +25,13 @@ bool isItDouble(std::string & str)
 {
     char *end;
     errno = 0;
+    if (str == "nan" || str == "+inf" || str == "-inf")
+        return true;
     for (size_t i = 0; i < str.length(); i++)
     {
         if (!std::isdigit(str[i]) && str[i] != '.' && (i == 0 && str[i] != '-'))
             return false;
     }
-    if (str == "nan" || str == "+inf" || str == "-inf")
-        return true;
     double d = std::strtod(str.c_str(), &end);
     if (errno == ERANGE || str[str.length() - 1] == '.' || std::abs(d) > std::numeric_limits<double>::max())
         return false;
@@ -43,14 +43,14 @@ bool isItFloat(std::string & str)
     char *end;
     double input;
 
+    if (str == "nanf" || str == "+inff" || str == "-inff")
+        return true;
     for (size_t i = 0; i < str.length(); i++)
     {
         if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != 'f' && (i == 0 && str[i] != '-'))
             return false;
     }
     input = strtod(str.c_str(), &end);
-    if (str == "nanf" || str == "inff" || str == "-inff")
-        return true;
     if (std::string(end) != "f" || !std::isdigit(str[str.length() - 2]) || std::abs(input) > std::numeric_limits<float>::max())
         return false;
     return true;

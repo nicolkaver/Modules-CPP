@@ -10,7 +10,7 @@ bool convertWords(std::string & str)
 		std::cout << "double: -inf" << std::endl;
 		return (1);
 	}
-	if (str == "+inf" || str == "+inff" || str == "inf" || str == "inff")
+	if (str == "+inf" || str == "+inff")
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
