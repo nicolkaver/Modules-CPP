@@ -62,11 +62,25 @@ const char* Span::NoSpaceLeft::what() const throw()
 
 std::ostream& operator<<(std::ostream& o, Span const & rhs)
 {
+    std::vector<int> tmp = rhs.getVector();
+    std::vector<int>::iterator it = tmp.begin();
 	for (unsigned long i = 0; i < rhs.getVector().size(); i++) {
-        o << rhs.getVector()[i];
+        o << *it;
+        it = tmp.begin() + i + 1;
         if (i != rhs.getVector().size() - 1)
             o << ", ";
     }
     o << std::endl;
 	return (o);
 }
+
+// std::ostream& operator<<(std::ostream& o, Span const & rhs)
+// {
+// 	for (unsigned long i = 0; i < rhs.getVector().size(); i++) {
+//         o << rhs.getVector().at(i);
+//         if (i != rhs.getVector().size() - 1)
+//             o << ", ";
+//     }
+//     o << std::endl;
+// 	return (o);
+// }
