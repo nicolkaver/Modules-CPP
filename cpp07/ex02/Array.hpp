@@ -30,7 +30,7 @@ public:
 };
 
 template<typename T>
-Array<T>::Array() : arr(), arrSize(0) {}
+Array<T>::Array() : arr(NULL), arrSize(0) {}
 
 template<typename T>
 Array<T>::Array(unsigned int n) : arr(new T[n]), arrSize(n) {}
@@ -46,8 +46,6 @@ Array<T> & Array<T>::operator=(const Array<T> &src)
 {
 	if(this != &src)
 	{
-		// if (arr)
-		// 	delete[] arr;
 		arrSize = src.arrSize;
 		arr = new T[arrSize];
 		for (int i = 0; i < arrSize; i++) {

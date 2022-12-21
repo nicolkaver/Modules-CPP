@@ -8,11 +8,11 @@ int main(void)
     for (int i = 0; i < size; ++i)
         arrOfFloats[i] = static_cast<float>(i) * 3;
     std::cout << "Printing arrOfFloats:" << std::endl;
-    std::cout << arrOfFloats << std::endl;
+    std::cout << arrOfFloats << std::endl << std::endl;
 
     std::cout << "Printing arr2:" << std::endl;
     Array<float> arr2 = arrOfFloats;
-    std::cout << arr2 << std::endl;
+    std::cout << arr2 << std::endl << std::endl;
 
     Array<std::string> arrOfStrings(4);
     arrOfStrings[0] = "This";
@@ -47,6 +47,7 @@ int main(void)
 }
 
 // #include <iostream>
+// #include <stdlib.h>
 // #include "Array.hpp"
 
 // #define MAX_VAL 750
