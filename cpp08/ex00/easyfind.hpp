@@ -4,7 +4,6 @@
 # include <iostream>
 # include <algorithm>
 # include <vector>
-# include <list>
 
 template<typename T>
 typename T::iterator easyfind(T & container, int const toFind) {

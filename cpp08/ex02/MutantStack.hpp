@@ -17,7 +17,7 @@ public:
 	}
 	~MutantStack() {}
 
-	std::deque<T> getStack(void) const { return (this->c); }
+	container getStack(void) const { return (this->c); }
 
 	typedef typename container::iterator iterator;
 

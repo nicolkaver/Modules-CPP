@@ -21,17 +21,18 @@ int main(void) {
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "The number is not in this container\n";	
+		std::cerr << "The number is not in this container." << std::endl;	
 	}
+	std::cout << std::endl;
 
-	std::cout << "Is 42 in this container?" << std::endl;
+	std::cout << "Is 42 in this container ?" << std::endl;
 	try
 	{
 		easyfind(intVector, 42);	
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "The number is not in this container\n";	
+		std::cerr << "The number is not in this container." << std::endl;	
 	}
 
 	return (0);

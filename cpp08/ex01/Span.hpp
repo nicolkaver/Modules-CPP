@@ -21,6 +21,7 @@ public:
     int longestSpan();
     void print(int);
 
+    // adding a plage of numbers:
     template<typename T>
     void	addNumber(T start, T end)
 	{
@@ -41,7 +42,7 @@ public:
     };
 
 private:
-    unsigned int N;
+    unsigned int N; //determines how many number we can stock in our vector
     std::vector<int> vec;
 };
 

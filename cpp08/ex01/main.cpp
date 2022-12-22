@@ -11,7 +11,7 @@ int main()
     std::cout << "The numbers of the vector are : " << sp;
     std::cout << "The shortest span is : " << sp.shortestSpan() << std::endl;
     std::cout << "The longest span is : " << sp.longestSpan() << std::endl;
-    std::cout << "Adding a sixth number to an array with a maximal capacity for 6 numbers:" << std::endl;
+    std::cout << "Adding a sixth number to an array with a maximal capacity of 5 numbers:" << std::endl;
     try {
         sp.addNumber(2);
     } catch (std::exception & e) {

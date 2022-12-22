@@ -74,6 +74,8 @@ std::ostream& operator<<(std::ostream& o, Span const & rhs)
 	return (o);
 }
 
+//Differentes manieres de faire:
+
 // std::ostream& operator<<(std::ostream& o, Span const & rhs)
 // {
 // 	for (unsigned long i = 0; i < rhs.getVector().size(); i++) {
